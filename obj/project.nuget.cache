@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "zkbhjXNSH7x44Tfsig5hT+6E5Pt8WtkrFCcjRSx2otmtt0sUxsQ4HxVdgRmRITg6hBuquXaZ86P5M1wciyNj2Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MirzakhanAliyevNovum\\source\\repos\\jurimullercloud\\md2medium-publisher\\md2medium-publisher.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MirzakhanAliyevNovum\\.nuget\\packages\\markdig.signed\\0.31.0\\markdig.signed.0.31.0.nupkg.sha512",
+    "C:\\Users\\MirzakhanAliyevNovum\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
