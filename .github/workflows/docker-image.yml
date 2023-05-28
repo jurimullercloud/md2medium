@@ -13,11 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set Build version
-      run: echo "RELEASE_VERSION=${{ github.event.release.tag_name}}" >> $GITHUB_ENV
     - name: Build the Docker image
       env:
-        RELASE_TAG: :${{ github.event.release.tag_name }}
+        RELASE_TAG: :${{ github.ref }}
       run: docker build -t jurimullercloud/md2medium-publisher:$RELEASE_TAG .
     - name: Docker Login
       # You may pin to the exact commit or the version.
