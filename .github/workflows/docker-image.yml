@@ -25,6 +25,6 @@ jobs:
         # Username used to log against the Docker registry
         username: jurimullercloud
         # Password or personal access token used to log against the Docker registry
-        password: ${{ secrets.DOCKERHUB_PASSWORD}}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD}}
     - name: Docker Push
       run: docker push jurimullercloud/md2medium-publisher:${{ github.event.release.tag_name }}
