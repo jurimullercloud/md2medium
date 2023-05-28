@@ -27,4 +27,5 @@ jobs:
         username: jurimullercloud
         # Password or personal access token used to log against the Docker registry
         password: ${{ secrets.DOCKERHUB_PASSWORD}}
-      
+    - name: Docker Push
+      run: docker push jurimullercloud:$(env.RELEASE_VERSION)
