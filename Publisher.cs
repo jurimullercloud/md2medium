@@ -27,15 +27,13 @@ public class Publisher {
 
     }
 
-    public async Task PublishAsync(string title, string content) {
+    public async Task<string> PublishAsync(string title, string content) {
         HttpClient client = new();
         var json = await getUserInfoAsync(client);
         var userId = JsonConvert.DeserializeAnonymousType(json, new {data = new {id = ""}})?.data?.id;
 
-        if (userId is null) {
-            Console.WriteLine("User id is null, aborting!");
-            return;
-        }
+        if (userId is null) 
+            throw new Exception("User id is null, aborting..");
 
 
         var data = new {
@@ -50,7 +48,7 @@ public class Publisher {
         req.Headers.Authorization = new("Bearer", $"{_integrationToken}");
         req.Content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
         var res = await client.SendAsync(req);
-        var str = await res.Content.ReadAsStringAsync();
+        return await res.Content.ReadAsStringAsync();
     }
 
 

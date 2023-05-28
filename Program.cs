@@ -2,7 +2,7 @@
 using MD2MediunPublisher;
 
 var token = Environment.GetEnvironmentVariable("INTEGRATION_TOKEN");
-var repoAddress = Environment.GetEnvironmentVariable("REPO_URL");
+var repoAddress = Environment.GetEnvironmentVariable("REPO_ADDRESS");
 var branch = Environment.GetEnvironmentVariable("BRANCH");
 var filePath = Environment.GetEnvironmentVariable("FILE_PATH");
 var blogTitle = Environment.GetEnvironmentVariable("BLOG_TITLE");
@@ -21,4 +21,5 @@ var processor = new FileProcessor(repoAddress!, branch!, filePath!);
 var content = await processor.GetFileAsync();
 
 var publisher = new Publisher(token!);
-await publisher.PublishAsync(blogTitle!, content);
+var res = await publisher.PublishAsync(blogTitle!, content);
+Console.WriteLine(res);
