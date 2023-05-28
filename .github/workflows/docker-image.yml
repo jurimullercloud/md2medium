@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       env:
-        RELASE_TAG: :${{ github.ref }}
+        RELASE_TAG: :${{ github.ref_name }}
       run: docker build -t jurimullercloud/md2medium-publisher:$RELEASE_TAG .
     - name: Docker Login
       # You may pin to the exact commit or the version.
